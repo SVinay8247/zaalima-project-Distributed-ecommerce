@@ -1,0 +1,10 @@
+.vscode/
+target/
+*.log
+
+.maven/
+
+.env
+*.env
+application-local.properties
+application-secret.properties
