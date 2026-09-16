@@ -1,0 +1,12 @@
+#!/bin/sh
+MVN_VERSION=3.9.16
+MVN_HOME="$HOME/.m2/wrapper/apache-maven-$MVN_VERSION"
+MVN_BIN="$MVN_HOME/bin/mvn"
+
+if [ ! -x "$MVN_BIN" ]; then
+  echo "Maven $MVN_VERSION is not installed locally."
+  echo "Please run ./mvnw.cmd on Windows or install Maven."
+  exit 1
+fi
+
+exec "$MVN_BIN" "$@"

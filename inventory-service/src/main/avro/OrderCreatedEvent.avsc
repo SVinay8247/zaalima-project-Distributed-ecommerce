@@ -1,0 +1,23 @@
+{
+  "type": "record",
+  "name": "OrderCreatedEvent",
+  "namespace": "com.zaalima.inventoryservice.avro",
+  "fields": [
+    {
+      "name": "orderId",
+      "type": "long"
+    },
+    {
+      "name": "productId",
+      "type": "long"
+    },
+    {
+      "name": "quantity",
+      "type": "int"
+    },
+    {
+      "name": "status",
+      "type": "string"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "name": "PaymentSuccessEvent",
+  "namespace": "com.zaalima.orderservice.avro",
+  "fields": [
+    {"name": "orderId", "type": "long"},
+    {"name": "productId", "type": "long"},
+    {"name": "quantity", "type": "int"},
+    {"name": "status", "type": "string"}
+  ]
+}
