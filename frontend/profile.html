@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Manage your ZAALIMA account access and shopping shortcuts.">
+    <title>My Profile | ZAALIMA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous"
+    >
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg" aria-label="Primary navigation">
+            <div class="container py-3">
+
+                <a
+                    class="navbar-brand brand-mark"
+                    href="index.html"
+                    aria-label="ZAALIMA home"
+                >
+                    <span class="brand-mark__symbol">Z</span>
+                    <span>ZAALIMA</span>
+                </a>
+
+                <button
+                    class="navbar-toggler border-0 shadow-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#primaryNavigation"
+                    aria-controls="primaryNavigation"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <i class="bi bi-list fs-2"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="primaryNavigation">
+
+                    <ul class="navbar-nav mx-auto gap-lg-2 mt-3 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#collections">Collections</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#why-zaalima">Our approach</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">Products</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="orders.html">My Orders</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link active"
+                                href="profile.html"
+                                aria-current="page"
+                            >
+                                Profile
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="nav-actions d-flex align-items-center gap-2 mt-3 mt-lg-0">
+
+                        <a
+                            class="icon-button position-relative"
+                            href="cart.html"
+                            aria-label="Shopping cart"
+                        >
+                            <i class="bi bi-bag"></i>
+                            <span class="cart-count" aria-label="0 items">0</span>
+                        </a>
+
+                        <button
+                            class="btn btn-dark rounded-pill px-4"
+                            type="button"
+                            data-action="account"
+                        >
+                            Account
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <section class="profile-page">
+            <div class="container profile-container">
+                <!-- Page Header -->
+                <div class="profile-heading">
+                    <p class="eyebrow">YOUR ZAALIMA ACCOUNT</p>
+                    <h1 class="page-title">My Profile</h1>
+                    <p class="page-intro">Account details and personal preferences are unavailable until authentication and profile service integration are provided.</p>
+                </div>
+
+                <!-- Profile Hero Card -->
+                <div class="profile-hero-card">
+                    <div class="profile-avatar" aria-hidden="true">
+                        <i class="bi bi-person"></i>
+                    </div>
+                    <div class="profile-hero-card__body">
+                        <p class="eyebrow mb-1">ACCOUNT STATUS</p>
+                        <h2>Guest Session</h2>
+                        <p>Your personal account details will become available when the authentication flow is connected.</p>
+                    </div>
+                    <span class="profile-status-badge profile-status-badge--signed-out">
+                        <i class="bi bi-lock-fill" aria-hidden="true"></i>Signed out
+                    </span>
+                </div>
+
+                <!-- Account & Security Card (Authentication-Required State) -->
+                <section class="profile-account-card" aria-labelledby="accountAccessTitle">
+                    <div class="profile-account-card__header">
+                        <div>
+                            <p class="eyebrow mb-1">ACCOUNT & SECURITY</p>
+                            <h2 id="accountAccessTitle">Account Access</h2>
+                        </div>
+                        <div class="profile-account-card__icon" aria-hidden="true">
+                            <i class="bi bi-shield-lock"></i>
+                        </div>
+                    </div>
+
+                    <!-- Informational status indicators (clearly non-functional / not connected) -->
+                    <div class="account-info-grid">
+                        <div class="account-info-item">
+                            <div class="account-info-item__icon" aria-hidden="true">
+                                <i class="bi bi-person-lock"></i>
+                            </div>
+                            <div>
+                                <span>Authentication</span>
+                                <strong>Required</strong>
+                                <small>Protected API Gateway</small>
+                            </div>
+                        </div>
+                        <div class="account-info-item">
+                            <div class="account-info-item__icon" aria-hidden="true">
+                                <i class="bi bi-database-lock"></i>
+                            </div>
+                            <div>
+                                <span>Personal Data</span>
+                                <strong>Not Stored</strong>
+                                <small>No profile data retained</small>
+                            </div>
+                        </div>
+                        <div class="account-info-item">
+                            <div class="account-info-item__icon" aria-hidden="true">
+                                <i class="bi bi-hdd-network"></i>
+                            </div>
+                            <div>
+                                <span>Profile Service</span>
+                                <strong>Not Connected</strong>
+                                <small>Integration pending</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-account-card__footer">
+                        <div>
+                            <strong>Authentication is required to access account features.</strong>
+                            <p>No personal information is collected or displayed until a legitimate account session is established.</p>
+                        </div>
+                        <button class="btn btn-dark rounded-pill px-4 text-nowrap" type="button" data-action="account">
+                            <i class="bi bi-shield-check me-2"></i>Account Access
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Services Status Section -->
+                <section class="mb-4" aria-labelledby="servicesTitle">
+                    <div class="profile-section-heading mb-3">
+                        <p class="eyebrow mb-1">CONNECTED SERVICES</p>
+                        <h2 id="servicesTitle">Activity & Services</h2>
+                    </div>
+
+                    <div class="profile-services-grid">
+                        <div class="profile-service-card">
+                            <div>
+                                <div class="profile-service-card__header">
+                                    <div class="profile-service-card__icon" aria-hidden="true">
+                                        <i class="bi bi-receipt"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h3>My Orders</h3>
+                                    </div>
+                                    <span class="profile-status-badge profile-status-badge--info">Active API</span>
+                                </div>
+                                <p>Order records and tracking status are managed directly through the distributed Order Service.</p>
+                            </div>
+                            <div class="profile-service-card__action">
+                                <a href="orders.html" class="btn btn-outline-dark rounded-pill px-4 w-100">
+                                    <i class="bi bi-receipt me-2"></i>View My Orders
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="profile-service-card">
+                            <div>
+                                <div class="profile-service-card__header">
+                                    <div class="profile-service-card__icon" aria-hidden="true">
+                                        <i class="bi bi-bell"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h3>Notifications</h3>
+                                    </div>
+                                    <span class="profile-status-badge profile-status-badge--signed-out">Unavailable</span>
+                                </div>
+                                <p>Real-time Kafka notification streams are not exposed through the current frontend gateway contract.</p>
+                            </div>
+                            <div class="profile-service-card__action">
+                                <a href="notifications.html" class="btn btn-outline-dark rounded-pill px-4 w-100">
+                                    <i class="bi bi-bell me-2"></i>Check Notifications
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quick Navigation Shortcuts -->
+                <section class="quick-links-section" aria-labelledby="quickLinksTitle">
+                    <div class="profile-section-heading mb-3">
+                        <p class="eyebrow mb-1">QUICK ACCESS</p>
+                        <h2 id="quickLinksTitle">Continue Shopping</h2>
+                    </div>
+
+                    <div class="quick-links-grid">
+                        <a class="quick-link-card" href="products.html">
+                            <span class="quick-link-card__icon quick-link-card__icon--blue" aria-hidden="true">
+                                <i class="bi bi-grid"></i>
+                            </span>
+                            <span class="quick-link-card__content">
+                                <strong>Browse Products</strong>
+                                <small>Explore the live catalog inventory</small>
+                            </span>
+                            <i class="bi bi-arrow-up-right quick-link-card__arrow" aria-hidden="true"></i>
+                        </a>
+
+                        <a class="quick-link-card" href="cart.html">
+                            <span class="quick-link-card__icon quick-link-card__icon--peach" aria-hidden="true">
+                                <i class="bi bi-bag"></i>
+                            </span>
+                            <span class="quick-link-card__content">
+                                <strong>Your Cart</strong>
+                                <small>Review items saved in this browser</small>
+                            </span>
+                            <i class="bi bi-arrow-up-right quick-link-card__arrow" aria-hidden="true"></i>
+                        </a>
+
+                        <a class="quick-link-card" href="orders.html">
+                            <span class="quick-link-card__icon quick-link-card__icon--lilac" aria-hidden="true">
+                                <i class="bi bi-receipt"></i>
+                            </span>
+                            <span class="quick-link-card__content">
+                                <strong>My Orders</strong>
+                                <small>Track order status and history</small>
+                            </span>
+                            <i class="bi bi-arrow-up-right quick-link-card__arrow" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+
+            <p class="mb-0">
+                © <span data-current-year></span> ZAALIMA.
+                Made for the everyday.
+            </p>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="orders.html">My Orders</a>
+                <a href="cart.html">Cart</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Toast -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+        <div
+            id="appToast"
+            class="toast border-0 shadow"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+        >
+
+            <div class="toast-body d-flex align-items-center gap-2">
+
+                <i class="bi bi-info-circle-fill"></i>
+
+                <span data-toast-message></span>
+
+                <button
+                    type="button"
+                    class="btn-close ms-auto"
+                    data-bs-dismiss="toast"
+                    aria-label="Close"
+                ></button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"
+    ></script>
+
+    <script type="module" src="js/profile.js"></script>
+
+</body>
+</html>

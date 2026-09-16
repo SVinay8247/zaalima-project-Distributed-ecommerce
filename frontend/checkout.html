@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Review your ZAALIMA order before placing it.">
+    <title>Checkout | ZAALIMA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg" aria-label="Primary navigation">
+            <div class="container py-3">
+                <a class="navbar-brand brand-mark" href="index.html" aria-label="ZAALIMA home"><span class="brand-mark__symbol">Z</span><span>ZAALIMA</span></a>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavigation" aria-controls="primaryNavigation" aria-expanded="false" aria-label="Toggle navigation"><i class="bi bi-list fs-2"></i></button>
+                <div class="collapse navbar-collapse" id="primaryNavigation">
+                    <ul class="navbar-nav mx-auto gap-lg-2 mt-3 mt-lg-0"><li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="products.html">Products</a></li><li class="nav-item"><a class="nav-link active" href="checkout.html" aria-current="page">Checkout</a></li></ul>
+                    <div class="nav-actions d-flex align-items-center gap-2 mt-3 mt-lg-0"><a class="icon-button position-relative" href="cart.html" aria-label="Shopping cart"><i class="bi bi-bag"></i><span class="cart-count" aria-label="0 items">0</span></a><button class="btn btn-dark rounded-pill px-4" type="button" data-action="account">Account</button></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="checkout-page">
+            <div class="container">
+                <div class="checkout-heading"><div><p class="eyebrow">FINAL REVIEW</p><h1 class="page-title">Checkout</h1><p class="page-intro">Review the supported order details before sending them to ZAALIMA.</p></div><a class="back-link" href="cart.html"><i class="bi bi-arrow-left me-2"></i>Back to Cart</a></div>
+                <div id="checkoutLoading" class="state-panel" role="status"><div class="spinner-border text-primary" aria-hidden="true"></div><h2>Preparing your order</h2><p>Reading your saved cart.</p></div>
+                <div id="checkoutEmpty" class="state-panel d-none"><div class="state-icon"><i class="bi bi-bag"></i></div><h2>Your cart is empty</h2><p>Add an inventory item before starting checkout.</p><a class="btn btn-primary rounded-pill px-4" href="products.html">Browse Products <i class="bi bi-arrow-up-right ms-2"></i></a></div>
+                <div id="checkoutMultiple" class="state-panel d-none"><div class="state-icon"><i class="bi bi-layers"></i></div><h2>One product per order</h2><p>The current Order API supports one product and quantity per request. Remove extra cart items before continuing.</p><a class="btn btn-primary rounded-pill px-4" href="cart.html">Review Cart <i class="bi bi-arrow-right ms-2"></i></a></div>
+                <div id="checkoutError" class="state-panel state-panel--error d-none" role="alert"><div class="state-icon"><i class="bi bi-cloud-slash"></i></div><h2>Order could not be prepared</h2><p id="checkoutErrorMessage">We could not prepare this order.</p><button class="btn btn-primary rounded-pill px-4" type="button" id="retryCheckout"><i class="bi bi-arrow-clockwise me-2"></i>Try again</button></div>
+                <div id="checkoutAuth" class="state-panel state-panel--error d-none" role="alert"><div class="state-icon"><i class="bi bi-shield-lock"></i></div><h2>Authentication required</h2><p>The Gateway requires a legitimate account token before an order can be placed.</p><button class="btn btn-dark rounded-pill px-4" type="button" data-action="account">Account access unavailable</button></div>
+                <div id="checkoutSuccess" class="state-panel checkout-success d-none" role="status"><div class="state-icon"><i class="bi bi-check2"></i></div><h2>Order submitted</h2><p>Your order was accepted by the Order API. Further status transitions are handled by the backend.</p><div id="orderResponse" class="order-response"></div><a class="btn btn-primary rounded-pill px-4" href="products.html">Continue Shopping <i class="bi bi-arrow-up-right ms-2"></i></a></div>
+
+                <section id="checkoutContent" class="checkout-layout d-none" aria-label="Checkout review"><div class="checkout-review"><div class="checkout-section-heading"><div><p class="eyebrow">ORDER REVIEW</p><h2>One considered choice.</h2></div><span class="review-lock"><i class="bi bi-lock me-1"></i>Review only</span></div><div id="checkoutItem" class="checkout-item"></div><div class="confirmation-note"><i class="bi bi-info-circle"></i><div><strong>What happens next?</strong><p>This submits only the confirmed product ID and quantity to the Order API. Payment and order status transitions remain with the backend.</p></div></div></div><aside class="checkout-summary"><p class="eyebrow">ORDER SUMMARY</p><h2>Ready to place?</h2><div class="summary-row"><span>Product ID</span><strong id="summaryProductId">-</strong></div><div class="summary-row"><span>Quantity</span><strong id="summaryQuantity">-</strong></div><div class="summary-row"><span>Inventory ID</span><strong id="summaryInventoryId">-</strong></div><div class="summary-total"><span>Payment</span><strong>Not collected</strong></div><button class="btn btn-primary rounded-pill w-100" type="button" id="placeOrder"><i class="bi bi-send me-2"></i>Place Order</button><p class="summary-note"><i class="bi bi-shield-check me-1"></i>No payment or customer details are collected here.</p></aside></section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer"><div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3"><p class="mb-0">© <span data-current-year></span> ZAALIMA. Made for the everyday.</p><div class="footer-links"><a href="index.html">Home</a><a href="products.html">Products</a><a href="cart.html">Cart</a></div></div></footer>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"><div id="appToast" class="toast border-0 shadow" role="status" aria-live="polite" aria-atomic="true"><div class="toast-body d-flex align-items-center gap-2"><i class="bi bi-info-circle-fill"></i><span data-toast-message></span><button type="button" class="btn-close ms-auto" data-bs-dismiss="toast" aria-label="Close"></button></div></div></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module" src="js/checkout.js"></script>
+</body>
+</html>
